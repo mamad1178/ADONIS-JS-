@@ -1,0 +1,48 @@
+@layout('layouts/app')
+   
+   @section('content')
+
+ 
+  
+  <section class="d-flex justify-content-center h-100 py-5">
+    <div class="card " style="width: 18rem;">
+        <img src="./insta.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p >
+        
+    <form action="/login" method="post" class="form-login">
+  
+    <div>
+    
+     <label for="email"></label>
+    
+     <input type="email" name="email"  placeholder="Email" class="form-control form-group" />
+        @if(flashMessages.has('errors.email'))
+         <small>{{flashMessages.get('errors.email') }}</small>
+        @endif
+    </div>
+
+    <div>
+    
+     <label for="password"></label>
+    
+     <input type="password" name="password" id"password" placeholder="Password" class="form-control form-group"  />
+        @if(flashMessages.has('errors.password'))
+          <small>{{flashMessages.get('errors.password') }}</small>
+        @endif
+    </div>
+
+    
+    <div> 
+    <br>
+     <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block btn-signin " >
+    <p class="py-3"> Dont have an account ? 
+    <a href="/signup">Sign up </a></p>
+    </div></div></div></p>
+   </section>
+
+
+
+  </body>
+
+  @endsection

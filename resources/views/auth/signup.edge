@@ -1,0 +1,61 @@
+   @layout('layouts/app')
+   
+   @section('content')
+   <section class="d-flex justify-content-center py-5">
+    <div class="card" style="width: 18rem;">
+        <img src="./insta.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p >
+        
+    <form action="/signup" method="post" class="form-signin">
+
+    <div>
+
+     <label for="name"></label>
+ 
+     <input type="text" name="name" id="name" placeholder="Name" class="form-control form-group" />
+     @if(flashMessages.has('errors.name'))
+     <small>{{flashMessages.get('errors.name') }}</small>
+     @endif
+ 
+    </div>
+
+    <div>
+    
+     <label for="email"></label>
+    
+     <input type="email" name="email" id="email" placeholder="E-mail " class="form-control form-group"/>
+     @if(flashMessages.has('errors.email'))
+     <small>{{flashMessages.get('errors.email') }}</small>
+     @endif
+    </div>
+    
+
+    <div>
+    
+     <label for="username"></label>
+    
+     <input type="username" name="username" id="username"  placeholder="Username" class="form-control form-group"/>
+    
+    @if(flashMessages.has('errors.username'))
+     <small>{{flashMessages.get('errors.username') }}</small>
+     @endif
+    </div>
+    <div>
+    
+     <label for="password"></label>
+    
+     <input type="password" name="password" id="password" placeholder="Password" class="form-control form-group"/>
+    @if(flashMessages.has('errors.password'))
+     <small>{{flashMessages.get('errors.password') }}</small>
+     @endif
+    </div>
+    <div> 
+    <br>
+    <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="Sign Up" >
+    <p class="py-3">Already have an account ? 
+    <a class="" href="./login">Login</a>
+    </div></p></p>
+  </div>
+    </div> </section>
+@endsection

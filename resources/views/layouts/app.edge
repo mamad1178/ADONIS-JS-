@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-color:#E3FAF7" class="box-sizing border-box">
+    <nav class="w-full bg white shadow-md border flex justify-center px-4 py-2" style="background-color: white";>
+        <div class="container-fluid d-flex justify-content-around">
+         @if(auth.isAuthenticated)
+          <a class="navbar-brand font-weight-bold" style="color:black"  href="/" id="adonis">
+            
+            Adonisgram
+          </a>
+          @else 
+          <p class="navbar-brand font-weight-bold" style="color:black" id="adonis">Adonisgram
+          </p>
+          @endif
+          
+          @if(auth.isAuthenticated)
+          <a class="navbar-brand"  href="/{{auth.user.username}}">
+            <img src="{{auth.user.avatar}}" alt="" width="35" height="35" class="d-inline-block align-text-top rounded-circle">
+          <p class="d-inline" id="adonis" style="color:black">{{auth.user.username}}</p>
+          </a>
+          
+            <form action="/logout" method="POST">
+               <button type="submit" id="adonis" class="btn btn-dark"> Sign Out  </button>
+            </form> 
+        @else 
+         <a href="/login" class="navbar-brand font-weight-bold" style="color:black"  id="adonis" >Login</a>
+        @endif
+          
+        </div>
+        
+      </nav>
+    @section('content')
+    @endsection
+</body>
+</html>
